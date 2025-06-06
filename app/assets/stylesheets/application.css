@@ -21,6 +21,10 @@
     border: 1px solid #d1d9e0;
     border-radius: 6px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    position: relative;
 }
 .markdown-editor-container:focus-within {
     outline: 2px solid -webkit-focus-ring-color;
@@ -28,21 +32,23 @@
 }
 
 .markdown-editor-toolbar {
-    height: 50px;
     background: #B4DEF6;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 30px;
+    padding: 15px 30px;
 }
 
 .markdown-editor-textarea-container {
     background: white;
+    overflow-y: auto;
+    flex-grow: 1;
 }
+
 #markdown-editor-textarea {
     box-sizing: border-box;
-    height: 130px;
+    height: 170px;
     min-height: 60px;
     width: 100%;
     padding: 16px;
@@ -73,5 +79,28 @@
   display: block;
 }
 .toolbar-tools.active {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.style-tool {
+    font-family: monospace;
+    height: 25px;
+    min-width: 30px;
+}
+.style-tool:hover {
+    cursor: pointer;
+}
+#tool-bold {
+    font-weight: bold;
+}
+#tool-italic {
+    font-style: italic;
+}
+
+.markdown-tool-group {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
