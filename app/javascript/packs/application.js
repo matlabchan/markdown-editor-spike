@@ -100,6 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
         case "tool-code-block":
           insertOrWrapText(textarea, "```matlab\n\n", "```", "", 10);
           break;
+        case "tool-image":
+          insertOrWrapText(textarea, '![Alt text](image-url) ', "", "", 12);
+            break;
         default:
           insertOrWrapText(textarea, "### ", "", "", 4);
       }

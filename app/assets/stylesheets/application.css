@@ -17,7 +17,7 @@
 }
 
 .markdown-editor-container {
-    width: 600px;
+    width: 700px;
     border: 1px solid #d1d9e0;
     border-radius: 6px;
     overflow: hidden;
@@ -48,8 +48,7 @@
 
 #markdown-editor-textarea {
     box-sizing: border-box;
-    height: 170px;
-    min-height: 60px;
+    min-height: 150px;
     width: 100%;
     padding: 16px;
     border: 0;
@@ -83,7 +82,11 @@
   flex-direction: row;
   gap: 20px;
 }
-
+.toolbar-tool {
+    font-family: monospace;
+    height: 25px;
+    min-width: 30px;
+}
 .style-tool {
     font-family: monospace;
     height: 25px;

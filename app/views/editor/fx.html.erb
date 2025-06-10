@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seamless Figure 8 Animation</title>
+  <style>
+    body {
+      background: #ededed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    svg {
+      width: 600px;
+      height: 400px;
+    }
+
+    .tube {
+      fill: none;
+      stroke: #0076a8;
+      stroke-width: 20;
+    }
+
+    .highlight {
+      fill: none;
+      stroke: #c04c0b;
+      stroke-width: 20;
+      stroke-linecap: round;
+      /* Two visible segments: 30px each, separated by 135px each (for full 2-loop coverage) */
+      stroke-dasharray: 100 1060;
+      animation: dashmove 12s linear infinite;
+    }
+
+    @keyframes dashmove {
+      from {
+        stroke-dashoffset: 0;
+      }
+      to {
+        stroke-dashoffset: 1160; /* Approx total of dashes + gaps */
+      }
+    }
+
+    circle {
+      fill: #c04c0b;
+      r: 10;
+    }
+
+    .circle-label {
+      fill: white;
+      font-size: 16px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+</head>
+<body>
+  <svg viewBox="0 0 600 400">
+    <!-- Your figure-8 path -->
+    <path id="infinityPath" class="tube"
+      d="M 200,300
+         C 100,300 100,100 200,100
+         C 300,100 300,300 400,300
+         C 500,300 500,100 400,100
+         C 300,100 300,300 200,300 Z" />
+
+    <!-- Highlight segment overlay -->
+    <path class="highlight"
+      d="M 200,300
+         C 100,300 100,100 200,100
+         C 300,100 300,300 400,300
+         C 500,300 500,100 400,100
+         C 300,100 300,300 200,300 Z" />
+
+    <!-- Circles and Labels -->
+    <!-- Left loop -->
+    <circle cx="150" cy="200" />
+    <text x="150" y="200" class="circle-label">2</text>
+
+    <circle cx="180" cy="130" />
+    <text x="180" y="130" class="circle-label">1</text>
+
+    <circle cx="180" cy="270" />
+    <text x="180" y="270" class="circle-label">3</text>
+
+    <!-- Right loop -->
+    <circle cx="450" cy="200" />
+    <text x="450" y="200" class="circle-label">4</text>
+
+    <circle cx="420" cy="130" />
+    <text x="420" y="130" class="circle-label">5</text>
+
+    <circle cx="420" cy="270" />
+    <text x="420" y="270" class="circle-label">6</text>
+  </svg>
+</body>
+</html>
