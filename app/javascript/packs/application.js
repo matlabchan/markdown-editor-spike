@@ -1,4 +1,5 @@
 import MarkdownIt from 'markdown-it'
+import "@github/markdown-toolbar-element";
 
 document.addEventListener("DOMContentLoaded", function () {
   const md = new MarkdownIt()

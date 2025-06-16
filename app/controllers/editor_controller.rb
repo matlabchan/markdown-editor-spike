@@ -3,6 +3,5 @@ class EditorController < ApplicationController
   end
 
   def fx
-
   end
 end
