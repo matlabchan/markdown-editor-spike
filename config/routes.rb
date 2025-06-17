@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "/fx" => "editor#fx"
   get "/gh" => "editor#github_md_toolbar"
+  get "/custom" => "editor#custom_md_toolbar"
 
   # Defines the root path route ("/")
   root "editor#custom_md_toolbar"
