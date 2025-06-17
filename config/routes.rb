@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   get "/fx" => "editor#fx"
+  get "/gh" => "editor#github_md_toolbar"
 
   # Defines the root path route ("/")
-  root "editor#index"
+  root "editor#custom_md_toolbar"
 end

@@ -1,5 +1,8 @@
 class EditorController < ApplicationController
-  def index
+  def custom_md_toolbar
+  end
+
+  def github_md_toolbar
   end
 
   def fx
